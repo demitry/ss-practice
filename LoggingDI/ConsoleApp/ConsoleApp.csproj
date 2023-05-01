@@ -86,6 +86,9 @@
     <PackageReference Include="Autofac">
       <Version>7.0.1</Version>
     </PackageReference>
+    <PackageReference Include="NLog.Extensions.Logging">
+      <Version>5.2.3</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
