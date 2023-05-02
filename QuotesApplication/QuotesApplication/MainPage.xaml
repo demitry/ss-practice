@@ -4,6 +4,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+    <!--<ContentPage.BindingContext>
+        <local:MainViewModel/>
+    </ContentPage.BindingContext>-->
+
     <StackLayout>
         <Frame
             Padding="24"
@@ -49,6 +53,9 @@
             <Label Text="Two way" />
             <Entry x:Name="EntrySoutceTwo" Placeholder="Source" />
             <Entry Placeholder="Target" Text="{Binding Source={x:Reference EntrySoutceTwo}, Path=Text, Mode=TwoWay}" />
+
+            <Entry Placeholder="User name" Text="{Binding UserName}" />
+            <Button Command="{Binding LoginCommand}" Text="Login" />
         </StackLayout>
     </StackLayout>
 
