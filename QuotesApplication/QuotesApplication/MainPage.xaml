@@ -55,6 +55,7 @@
             <Entry Placeholder="Target" Text="{Binding Source={x:Reference EntrySoutceTwo}, Path=Text, Mode=TwoWay}" />
 
             <Entry Placeholder="User name" Text="{Binding UserName}" />
+            <Label Text="{Binding UserName}" />
             <Button Command="{Binding LoginCommand}" Text="Login" />
         </StackLayout>
     </StackLayout>
