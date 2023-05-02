@@ -9,13 +9,13 @@
             Padding="24"
             BackgroundColor="#2196F3"
             CornerRadius="0">
-            <Label
+            <!--<Label
                 FontSize="36"
                 HorizontalTextAlignment="Center"
                 Text="Welcome to Xamarin.Forms!"
-                TextColor="White" />
+                TextColor="White" />-->
         </Frame>
-        <Label
+        <!--<Label
             Padding="30,10,30,10"
             FontSize="Title"
             Text="Start developing now" />
@@ -32,7 +32,7 @@
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
-        </Label>
+        </Label>-->
 
         <Label
             FontSize="Large"
@@ -40,6 +40,16 @@
             Rotation="{Binding Source={x:Reference SliderRotation}, Path=Value}"
             Text="Rotate Me" />
         <Slider x:Name="SliderRotation" Maximum="360" />
+
+        <StackLayout>
+            <Label Text="One way" />
+            <Entry x:Name="EntrySource" Placeholder="Source" />
+            <Entry Placeholder="Target" Text="{Binding Source={x:Reference EntrySource}, Path=Text, Mode=OneWay}" />
+
+            <Label Text="Two way" />
+            <Entry x:Name="EntrySoutceTwo" Placeholder="Source" />
+            <Entry Placeholder="Target" Text="{Binding Source={x:Reference EntrySoutceTwo}, Path=Text, Mode=TwoWay}" />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
