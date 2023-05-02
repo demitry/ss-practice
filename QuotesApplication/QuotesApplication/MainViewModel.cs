@@ -7,6 +7,8 @@ namespace QuotesApplication
 {
     public class MainViewModel : INotifyPropertyChanged
     {
+        private INavigation _navigation;
+
         public ICommand LoginCommand { get; set; }
 
         private string _username;
@@ -29,14 +31,16 @@ namespace QuotesApplication
         }
 
 
-        public MainViewModel() 
+        public MainViewModel(INavigation navigation) 
         {
-            LoginCommand = new Command(Login);            
+            _navigation = navigation;
+            LoginCommand = new Command(Login);       
         }
 
         private void Login()
         {
-            App.Current.MainPage.DisplayAlert("Hi", _username, "Cancel");
+            _navigation.PushAsync(new PageOne(_username));
+            //App.Current.MainPage.DisplayAlert("Hi", _username, "Cancel");
         }
     }
 }

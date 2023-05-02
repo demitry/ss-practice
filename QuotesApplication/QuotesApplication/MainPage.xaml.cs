@@ -7,7 +7,7 @@ namespace QuotesApplication
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel();
+            BindingContext = new MainViewModel(Navigation);
         }
     }
 }
